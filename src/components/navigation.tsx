@@ -12,6 +12,8 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import SettingsDropdown from "./settingDropdown"
+import { CreatePost } from "./createPost"
+
 const Navigation = () => {
     const [expanded, setExpanded] = useState(true);
     const [searchExpanded, setSearchExpanded] = useState(false);
@@ -167,25 +169,27 @@ const Navigation = () => {
                             </Button>
                         </li>
                         <li>
-                            <Button variant={"ghost"} className={`${expanded ? "w-full" : "w-fit"} group flex justify-start  text-lg font-normal rounded-lg py-6`}
-                                onClick={() => (setExpanded(true))}
-                            >
-                                <TooltipProvider>
-                                    <Tooltip>
-                                        <TooltipTrigger asChild>
-                                            <CirclePlus
-                                                className={`h-6 w-6 group-hover:scale-110 transition-all`}
-                                            />
-                                        </TooltipTrigger>
-                                        <TooltipContent>
-                                            <p>Create</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-                                </TooltipProvider>
+                            <CreatePost>
+                                <Button variant={"ghost"} className={`${expanded ? "w-full" : "w-fit"} group flex justify-start  text-lg font-normal rounded-lg py-6`}
+                                    
+                                >
+                                    <TooltipProvider>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <CirclePlus
+                                                    className={`h-6 w-6 group-hover:scale-110 transition-all`}
+                                                />
+                                            </TooltipTrigger>
+                                            <TooltipContent>
+                                                <p>Create</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
 
-                                <span className={`${expanded ? "w-fit opacity-100 ml-6" : "w-0  opacity-0 overflow-hidden"} transition-all`}>Create</span>
+                                    <span className={`${expanded ? "w-fit opacity-100 ml-6" : "w-0  opacity-0 overflow-hidden"} transition-all`}>Create</span>
 
-                            </Button>
+                                </Button>
+                            </CreatePost>
                         </li>
                         <li>
                             <Button asChild variant={"ghost"} className={`${expanded ? "w-full" : "w-fit"} group flex justify-start  text-lg font-normal rounded-lg py-6`}
@@ -212,7 +216,7 @@ const Navigation = () => {
                         </li>
                         <li>
                             <SettingsDropdown>
-                                <Button variant={"ghost"} className={`${expanded ? "w-full" : "w-fit"} group flex justify-start  text-lg font-normal rounded-lg py-6`} 
+                                <Button variant={"ghost"} className={`${expanded ? "w-full" : "w-fit"} group flex justify-start  text-lg font-normal rounded-lg py-6`}
                                 >
                                     <TooltipProvider>
                                         <Tooltip>
@@ -317,7 +321,7 @@ const Navigation = () => {
 
 
             </footer>
-        </div>
+        </div >
     )
 }
 
